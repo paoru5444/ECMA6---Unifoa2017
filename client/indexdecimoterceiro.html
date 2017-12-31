@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calcula do 13º Salario</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+</head>
+
+<body class="container">
+    <header>
+        <input type='checkbox' id='bt_menu'>
+        <label for='bt_menu'>&#9776;</label>
+        <nav class='menu'>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Cadastros</a>
+                    <ul>
+                        <li><a href='#'>Filial</a></li>
+                        <li><a href='#'>Centro de Custo</a></li>
+                        <li><a href='#'>Usuários</a></li>
+                        <li><a href='#'>Tipo de Inventário</a></li>
+                        <li><a href='#'>Fornecedor</a></li>
+                        <li><a href='#'>13o Salario</a></li>
+                        <li><a href='#'>Ferias</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Inventário</a>
+                    <ul>
+                        <li><a href='#'>Desktop/Notebook</a></li>
+                        <li><a href='#'>Impressora</a></li>
+                        <li><a href='#'>SmartPhone/Celular</a></li>
+                        <li><a href='#'>No Break</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Relatórios</a>
+                    <ul>
+                        <li><a href='#'>Inventário</a></li>
+                        <li><a href='#'>Fornecedor</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div id='mensagemView'></div>
+        <h1 class="text-center">Calcula 13o Salario</h1>
+
+        <form class="form" onsubmit='calcula13oSalarioController.adiciona(event)'>
+
+            <div class="form-group">
+                <label for="dataAdmissao">Data Admissão</label>
+                <input type="date" id="dataAdmissao" class="form-control" required autofocus/>
+            </div>
+
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="string" id="nome" class="form-control" value="" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="funcao">Função</label>
+                <input type="string" id="funcao" class="form-control" value="" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="salario">Salario</label>
+                <input type="value" id="salario" class="form-control" value="" required/>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Incluir</button>
+        </form>
+
+        <div class="text-center">
+            <button class="btn btn-primary text-center" type="button">
+                Importar Funcionario
+            </button>
+            <button class="btn btn-primary text-center" type="button">
+                Apagar
+            </button>
+        </div>
+    </section>
+
+    <br>
+    <br>
+
+    <div id='decimoTerceiro'></div>
+</body>
+<script src="js/app/models/Calcula13oSalario.js"></script>
+<script src="js/app/controllers/Calcula13oSalarioController.js"></script>
+<script src="js/app/helpers/DateHelper13oSalario.js"></script>
+<script src="js/app/models/Lista13oSalario.js"></script>
+<script src="js/app/models/MensagemDecimoTerceiro.js"></script>
+<script src="js/app/views/View.js"></script>
+<script src="js/app/views/DecimoTerceiroView.js"></script>
+<script src="js/app/views/MensagemViewDecimoTerceiro.js"></script>
+<script>
+    let calcula13oSalarioController = new Calcula13oSalarioController();
+</script>
+
+</html>
